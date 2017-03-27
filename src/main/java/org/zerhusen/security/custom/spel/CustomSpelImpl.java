@@ -19,10 +19,12 @@ public class CustomSpelImpl implements CustomSpel {
 
 
     @Override
-    public boolean hasAccess(String key,HttpServletRequest request) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    public boolean hasAccess(String key,HttpServletRequest request,Authentication authentication) {
+        //Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ###### "+request.getHeader("Authorization"));
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>" +
+                ">>>>>>>>>>>>>>>>> ###### "+request.
+                getHeader("Authorization")+" :: "+authentication.getName());
         //System.out.println("CALLING THIS METHOD***************************************************    "+authentication.getName()+" :: "+this.hashCode()+" :: "+authentication.hashCode());
         return true;
     }
