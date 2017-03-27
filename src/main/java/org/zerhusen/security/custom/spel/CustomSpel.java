@@ -5,5 +5,5 @@ package org.zerhusen.security.custom.spel;
  */
 public interface CustomSpel {
 
-    boolean hasAccess(String key);
+    boolean hasAccess(String key,HttpServletRequest request);
 }
